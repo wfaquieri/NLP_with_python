@@ -34,7 +34,9 @@ from featx import bag_of_words
 bag_of_words(['the', 'quick', 'brown', 'fox'])
 {'quick': True, 'brown': True, 'the': True, 'fox': True}
 ```
-Um dos problemas desse método é tratar todas as palavras igualmente, porém algumas palavras podem caracterizar mais o texto/documento do que outras. Utilizando bag-of-words você não consegue caputrar essa propriedade de caracterização ou exclusividade. Além disso, algum tratamento prévio ao Corpus é necessário, tal como retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc. a biblioteca NLTK já nos fornece uma função 'stopwords' que aplica esse tipo de tratamento:
+Um dos problemas desse método é tratar todas as palavras igualmente, porém algumas palavras podem caracterizar mais o texto/documento do que outras. Utilizando bag-of-words você não consegue caputrar essa propriedade de caracterização ou exclusividade. 
+
+Além disso, algum tratamento prévio ao Corpus é necessário, tal como retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc. a biblioteca NLTK já nos fornece uma função 'stopwords' que aplica esse tipo de tratamento:
 
 ``` python
 def bag_of_words_not_in_set(words, badwords):
