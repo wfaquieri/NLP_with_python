@@ -34,7 +34,7 @@ from featx import bag_of_words
 bag_of_words(['the', 'quick', 'brown', 'fox'])
 {'quick': True, 'brown': True, 'the': True, 'fox': True}
 ```
-Um dos problemas desse método é tratar todas as palavras igualmente. Entretando, algumas palavras podem caracterizar mais o texto/documento do que outras. Além disso, é necessário retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc.
+Um dos problemas desse método é tratar todas as palavras igualmente, pois algumas palavras podem caracterizar mais o texto/documento do que outras. Além disso, é necessário retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc. a biblioteca NLTK já nos fornece uma função 'stopwords' que aplica esse tipo de tratamento:
 
 ``` python
 def bag_of_words_not_in_set(words, badwords):
@@ -44,17 +44,20 @@ from featx import bag_of_words_not_in_set
 bag_of_words_not_in_set(['the', 'quick', 'brown', 'fox'], ['the'])
 {'quick': True, 'brown': True, 'fox': True}
 
+# Stopwords
 from nltk.corpus import stopwords
 
 def bag_of_non_stopwords(words, stopfile='english'):
   badwords = stopwords.words(stopfile)
   return bag_of_words_not_in_set(words, badwords)
 
+# Note que o artigo 'the' foi excluido da bag-of-wrods
 from featx import bag_of_non_stopwords
 bag_of_non_stopwords(['the', 'quick', 'brown', 'fox'])
 {'quick': True, 'brown': True, 'fox': True}
+
 ``` 
-Agora já temos um array de palavras únicas ou um conjunto de unigramas. Todavia, em alguns contextos, pode fazer sentido a utilização de bigramas ou trigramas. Podemos utilizar BigramCollocationFinder para encontrar bigramas significativos:
+Agora já temos um array de palavras únicas ou um conjunto de unigramas. Todavia, em alguns contextos, pode fazer mais sentido combinar palavras, através de bigramas ou trigramas, ao invés de analisar cada palavra isoladamente. Podemos utilizar 'BigramCollocationFinder' para encontrar bigramas significativos:
 
 ```  Python
 from nltk.collocations import BigramCollocationFinder
