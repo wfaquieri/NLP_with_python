@@ -2,7 +2,7 @@
 
 ![](capa.png)
 
-overview: to learn natural language processing (NLP) techniques, such as how to identify and separate words, how to extract topics in a text, and how to build your own fake news classifier. libraries: NLTK, alongside libraries which utilize deep learning to solve common NLP problems. 
+Resumo de algumas técnicas de natural language processing (NLP). Bibliotecas: NLTK, além de bibliotecas que utilizam deep learning para resolver problemas comuns de NLP. Muitas das notas contidas aqui foram retiradas do livro "Natural Language Processing: Python and NLTK" de Hardeniya et al.
 
 
 
