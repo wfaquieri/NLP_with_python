@@ -74,3 +74,4 @@ bag_of_bigrams_words(['the', 'quick', 'brown', 'fox'])
 True, 'fox': True, ('quick', 'brown'): True, 'quick': True, 'the': True}
 
 ``` 
+## Treinando um classificador Naive Bayes
