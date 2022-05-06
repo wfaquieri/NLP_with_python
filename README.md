@@ -36,7 +36,7 @@ bag_of_words(['the', 'quick', 'brown', 'fox'])
 ```
 Um dos problemas desse método é tratar todas as palavras igualmente, porém algumas palavras podem caracterizar mais o texto/documento do que outras. Utilizando bag-of-words você não consegue caputrar essa propriedade de caracterização ou exclusividade. 
 
-Além disso, algum tratamento prévio ao Corpus é necessário, tal como retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc. A biblioteca NLTK já nos fornece a função 'stopwords' que aplica esse tipo de tratamento e que funciona muito bem e não tão bem para outros idiomas. Caso o idioma analisado seja o português, uma dica é utilizar a [mais completa coleção de palavras irrelevantes para a língua portuguesa](https://github.com/stopwords-iso/stopwords-pt) :
+Além disso, algum tratamento prévio ao Corpus é necessário, tal como retirar palavras conhecidas como 'stopwords'. Aquelas palavras que não agregam muito semanticamente à análise, tais como artigos, preposições, etc. A biblioteca NLTK já nos fornece a função 'stopwords', que funciona muito bem para o idioma inglês e não tão bem para outros idiomas. Caso o idioma analisado seja o português, uma dica é utilizar a [mais completa coleção de palavras irrelevantes para a língua portuguesa](https://github.com/stopwords-iso/stopwords-pt) :
 
 ``` python
 def bag_of_words_not_in_set(words, badwords):
