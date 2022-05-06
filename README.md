@@ -1,4 +1,4 @@
-# NLP_with_python
+# NL with Python
 learn natural language processing (NLP) techniques, such as how to identify and separate words, how to extract topics in a text, and how to build your own fake news classifier. libraries: NLTK, alongside libraries which utilize deep learning to solve common NLP problems. 
 
 ## Classificação de Texto
@@ -44,4 +44,25 @@ from nltk.corpus import stopwords
 def bag_of_non_stopwords(words, stopfile='english'):
   badwords = stopwords.words(stopfile)
   return bag_of_words_not_in_set(words, badwords)
+
+from featx import bag_of_non_stopwords
+bag_of_non_stopwords(['the', 'quick', 'brown', 'fox'])
+{'quick': True, 'brown': True, 'fox': True}
+``` 
+Agora já temos um array de palavras únicas ou um conjunto de unigramas. Todavia, em alguns contextos, pode fazer sentido a utilização de bigramas ou trigramas. Podemos utilizar BigramCollocationFinder para encontrar bigramas significativos:
+
+```  Python
+from nltk.collocations import BigramCollocationFinder
+from nltk.metrics import BigramAssocMeasures
+
+def bag_of_bigrams_words(words, score_fn=BigramAssocMeasures.chi_sq, n=200):
+  bigram_finder = BigramCollocationFinder.from_words(words)
+  bigrams = bigram_finder.nbest(score_fn, n)
+  return bag_of_words(words + bigrams)
+  
+from featx import bag_of_bigrams_words
+bag_of_bigrams_words(['the', 'quick', 'brown', 'fox'])
+{'brown': True, ('brown', 'fox'): True, ('the', 'quick'): 
+True, 'fox': True, ('quick', 'brown'): True, 'quick': True, 'the': True}
+
 ``` 
