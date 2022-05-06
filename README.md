@@ -2,7 +2,7 @@
 
 ![](capa.png)
 
-Resumo de algumas técnicas de natural language processing (NLP). Bibliotecas: NLTK, além de bibliotecas que utilizam deep learning para resolver problemas comuns de NLP. Muitas das notas contidas aqui foram retiradas do livro "Natural Language Processing: Python and NLTK" de Hardeniya et al.
+Resumo de algumas técnicas de natural language processing (NLP). Bibliotecas: NLTK, além de bibliotecas que utilizam deep learning para resolver problemas comuns de NLP. Muitas das notas contidas aqui foram retiradas do livro "Natural Language Processing: Python and NLTK" de Hardeniya *et al*.
 
 
 
